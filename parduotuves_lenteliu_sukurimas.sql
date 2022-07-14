@@ -39,3 +39,12 @@ CREATE TABLE IF NOT EXISTS klientai(
 
 
 ---------------- DABAR JAU LENTELĖS SU FOREIGN KEY ------------------
+-- užsakymų lentelė
+CREATE TABLE IF NOT EXISTS uzsakymai(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    adreso_id INT UNSIGNED NOT NULL,
+    kliento_id INT UNSIGNED NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(kliento_id) REFERENCES klientai(id),
+    FOREIGN KEY(adreso_id) REFERENCES adresai(id)
+) ENGINE = INNODB;
