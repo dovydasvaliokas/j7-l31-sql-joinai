@@ -48,3 +48,15 @@ CREATE TABLE IF NOT EXISTS uzsakymai(
     FOREIGN KEY(kliento_id) REFERENCES klientai(id),
     FOREIGN KEY(adreso_id) REFERENCES adresai(id)
 ) ENGINE = INNODB;
+
+-- prekių lentelė
+CREATE TABLE IF NOT EXISTS prekes(
+    id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    pavadinimas VARCHAR(50) NOT NULL,
+    aprasymas VARCHAR(300),
+    kaina DECIMAL(7,2) UNSIGNED NOT NULL,
+    kiekis SMALLINT UNSIGNED NOT NULL,
+    kategorijos_id SMALLINT UNSIGNED,
+    PRIMARY KEY(id),
+    FOREIGN KEY (kategorijos_id) REFERENCES kategorija(id)
+) ENGINE = INNODB;
