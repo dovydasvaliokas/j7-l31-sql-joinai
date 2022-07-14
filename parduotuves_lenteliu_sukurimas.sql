@@ -4,3 +4,7 @@ CREATE TABLE IF NOT EXISTS kategorija(
     pavadinimas VARCHAR(50) NOT NULL,
     PRIMARY KEY(id)
 ) ENGINE = INNODB;
+
+-- pridedu aprašymo stulpelį į kategoriją
+ALTER TABLE kategorija
+ADD COLUMN aprasymas VARCHAR(300)
