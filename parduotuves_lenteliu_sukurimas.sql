@@ -60,3 +60,13 @@ CREATE TABLE IF NOT EXISTS prekes(
     PRIMARY KEY(id),
     FOREIGN KEY (kategorijos_id) REFERENCES kategorija(id)
 ) ENGINE = INNODB;
+
+
+-- užsakymo prekių sujungimo lentelė
+CREATE TABLE IF NOT EXISTS `uzsakymo_prekes` (
+  `uzsakymo_id` int(10) UNSIGNED NOT NULL,
+  `prekes_id` mediumint(8) UNSIGNED NOT NULL,
+  `prekes_kiekis` smallint(5) UNSIGNED NOT NULL,
+  FOREIGN KEY(`uzsakymo_id`) REFERENCES `uzsakymai` (`id`) ,
+  FOREIGN KEYFOREIGN KEY (`prekes_id`) REFERENCES `prekes` (`id`) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
