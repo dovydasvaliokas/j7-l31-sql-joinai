@@ -17,3 +17,15 @@ CREATE TABLE IF NOT EXISTS pareigos (
     PRIMARY KEY(id)
 ) ENGINE = INNODB;
 
+-- adresų lentelė
+CREATE TABLE IF NOT EXISTS adresai (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    gatve VARCHAR(50) NOT NULL,
+    namo_nr SMALLINT UNSIGNED NOT NULL,
+    buto_nr SMALLINT UNSIGNED,
+    miestas VARCHAR(50) NOT NULL,
+    salis VARCHAR(50) NOT NULL,
+    pasto_kodas VARCHAR(8),
+    PRIMARY KEY(id)
+) ENGINE = INNODB;
+
