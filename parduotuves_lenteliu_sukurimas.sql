@@ -69,4 +69,14 @@ CREATE TABLE IF NOT EXISTS `uzsakymo_prekes` (
   `prekes_kiekis` smallint(5) UNSIGNED NOT NULL,
   FOREIGN KEY(`uzsakymo_id`) REFERENCES `uzsakymai` (`id`) ,
   FOREIGN KEYFOREIGN KEY (`prekes_id`) REFERENCES `prekes` (`id`) 
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
+
+-- telefonų lentelė
+CREATE TABLE IF NOT EXISTS telefonai(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    salies_kodas SMALLINT UNSIGNED NOT NULL,
+    numeris INT UNSIGNED NOT NULL,
+    kliento_id INT UNSIGNED NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(kliento_id) REFERENCES klientai(id)
+) ENGINE = INNODB;
