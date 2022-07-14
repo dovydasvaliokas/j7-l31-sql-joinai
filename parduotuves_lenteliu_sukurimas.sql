@@ -29,3 +29,13 @@ CREATE TABLE IF NOT EXISTS adresai (
     PRIMARY KEY(id)
 ) ENGINE = INNODB;
 
+-- klientų lentelė
+CREATE TABLE IF NOT EXISTS klientai(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    vardas VARCHAR(50) NOT NULL,
+    pavarde VARCHAR(50) NOT NULL,
+    PRIMARY KEY(id)
+) ENGINE = INNODB;
+
+
+---------------- DABAR JAU LENTELĖS SU FOREIGN KEY ------------------
