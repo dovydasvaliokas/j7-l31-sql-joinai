@@ -80,3 +80,14 @@ CREATE TABLE IF NOT EXISTS telefonai(
     PRIMARY KEY(id),
     FOREIGN KEY(kliento_id) REFERENCES klientai(id)
 ) ENGINE = INNODB;
+
+-- darbuotojai
+CREATE TABLE IF NOT EXISTS darbuotojai (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    vardas VARCHAR(50) NOT NULL,
+    pavarde VARCHAR(50) NOT NULL,
+    pareigos_id TINYINT UNSIGNED NOT NULL,
+    alga DECIMAL(7,2) UNSIGNED NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(pareigos_id) REFERENCES pareigos(id)
+) ENGINE = INNODB;
